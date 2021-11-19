@@ -53,15 +53,20 @@ const routes: Routes = [
         ],
       },
       {
+        path: 'calendar',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
+          },
+        ],
+      },
+      {
         path: '',
         redirectTo: '/tabs/main',
         pathMatch: 'full',
       },
     ],
-  },
-  {
-    path: 'calendar',
-    loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
   },
 ];
 

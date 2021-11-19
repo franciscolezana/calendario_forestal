@@ -3,7 +3,8 @@
     "main": "Main",
     "services": "Services",
     "messages": "Messages",
-    "profile": "Profile"
+    "profile": "Profile",
+    "calendar": "Calendar"
   },
   "services": {
     "friends_title": "Friends",

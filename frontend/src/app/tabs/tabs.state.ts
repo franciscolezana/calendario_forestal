@@ -25,6 +25,7 @@ export const initialState: TabsStateModel = {
     { id: 'services', badge: 0, icon: 'grid-outline', disabled: false },
     { id: 'messages', badge: 0, icon: 'chatbubble-outline', disabled: false },
     { id: 'profile', badge: 0, icon: 'person-circle-outline', disabled: false },
+    { id: 'calendar', badge: 0, icon: 'calendar', disabled: false },
   ],
   isLoading: false,
   isFailed: false,
