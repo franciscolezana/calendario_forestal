@@ -1,96 +1,82 @@
-<a href="https://github.com/thenaim/ionic-tk-social-network">
-  <p align="center">
-    <img src="https://i.imgur.com/xcNkbhv.gif">
-  </p>
-</a>
-<h2 align="center">
-  Introducing a open source social network app.
-</h2>
-<p align="center">
-  Providing you with the components, templates, native components, ngrx, i18n, localStorage, themes, auth pages and much more  needed to build a mobile application on ionic framework.
-</p>
+# Ionic Angular Conference Application
 
-# Getting started
+This application is purely a kitchen-sink demo of the Ionic Framework and Angular.
 
-```bash
-git clone https://github.com/thenaim/ionic-tk-social-network myApp
-cd myApp
-npm i
+**There is not an actual Ionic Conference at this time.** This project is just to show off Ionic components in a real-world application. Please go through the steps in [CONTRIBUTING](https://github.com/ionic-team/ionic-conference-app/blob/master/.github/CONTRIBUTING.md) before submitting an issue.
 
-# Build, before adding any native platforms
-ionic build
 
-# Add ios
-npx cap add ios
+## Table of Contents
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [App Preview](#app-preview)
+- [Deploying](#deploying)
+  - [Progressive Web App](#progressive-web-app)
+  - [Android](#android)
+  - [iOS](#ios)
 
-# Add Android
-npx cap add android
-```
 
-# Run Capacitor or see [docs](https://ionicframework.com/docs/cli/commands/capacitor-run)
+## Getting Started
 
-```bash
-# Open Android
-npx cap open android
+* [Download the installer](https://nodejs.org/) for Node LTS.
+* Install the ionic CLI globally: `npm install -g ionic`
+* Clone this repository: `git clone https://github.com/ionic-team/ionic-conference-app.git`.
+* Run `npm install` from the project root.
+* Run `ionic serve` in a terminal from the project root.
+* Profit. :tada:
 
-# Open iOS
-npx cap open ios
-```
+_Note: See [How to Prevent Permissions Errors](https://docs.npmjs.com/getting-started/fixing-npm-permissions) if you are running into issues when trying to install packages globally._
 
-# Run in Browser
+## Contributing
 
-```bash
-npm run start
-```
+See [CONTRIBUTING.md](https://github.com/ionic-team/ionic-conference-app/blob/master/.github/CONTRIBUTING.md) :tada::+1:
 
-### iOS Setup
 
-Download and install [Xcode](https://developer.apple.com/xcode/).
+## App Preview
 
-Then make sure the command-line tools are selected for use:
+### [Menu](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/menu/menu.html)
 
-```bash
-xcode-select --install
-```
+| Material Design  | iOS  |
+| -----------------| -----|
+| ![Android Menu](/resources/screenshots/android-menu.png) | ![iOS Menu](/resources/screenshots/ios-menu.png) |
 
-And you need to install some utilities:
 
-```bash
-npm install -g ios-sim
-npm install -g ios-deploy
-```
+### [Schedule Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/schedule/schedule.html)
 
-# Android Setup
+| Material Design  | iOS  |
+| -----------------| -----|
+| ![Android Schedule](/resources/screenshots/android-schedule.png) | ![iOS Schedule](/resources/screenshots/ios-schedule.png) |
 
-Download and install:
+### [Speakers Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/speaker-list/speaker-list.html)
 
-- [JDK8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-- [Gradle](https://gradle.org/install/)
-- [Android Studio](https://developer.android.com/studio/)
+| Material Design  | iOS  |
+| -----------------| -----|
+| ![Android Speakers](/resources/screenshots/android-speakers.png) | ![iOS Speakers](/resources/screenshots/ios-speakers.png) |
 
-Then install Android SDK on Android Studio and configure the [environment variables](https://developer.android.com/studio/command-line/variables) (`ANDROID_SDK_ROOT`).
+### [Speaker Detail Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/speaker-detail/speaker-detail.html)
 
-## Supporting platforms
+| Material Design  | iOS  |
+| -----------------| -----|
+| ![Android Speaker Detail](/resources/screenshots/android-speaker-detail.png) | ![iOS Speaker Detail](/resources/screenshots/ios-speaker-detail.png) |
 
-In pursuit of [adaptive styling](https://ionicframework.com/docs/core-concepts/fundamentals#adaptive-styling), Ionic fully supports and is well tested on the mobile platforms listed below:
+### [About Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/about/about.html)
 
-| Platform    | Version |
-| ----------- | ------- |
-| **Android** | 5.0+    |
-| **iOS**     | 11.0+   |
+| Material Design  | iOS  |
+| -----------------| -----|
+| ![Android About](/resources/screenshots/android-about.png) | ![iOS About](/resources/screenshots/ios-about.png) |
 
-See [Ionic Docs](https://ionicframework.com/docs/reference/browser-support) for more information.
 
-## Contributors
+## Deploying
 
-Want to start contributing to open source with ionic? Leave your mark and join the growing team of contributors!
+### Progressive Web App
 
-Get started by checking out list of open [issues](https://github.com/thenaim/ionic-tk-social-network/issues) and reading [Contributor Guide](https://github.com/thenaim/ionic-tk-social-network/blob/master/CONTRIBUTING.md)
+1. Un-comment [these lines](https://github.com/ionic-team/ionic2-app-base/blob/master/src/index.html#L21)
+2. Run `npm run ionic:build --prod`
+3. Push the `www` folder to your hosting service
 
-## Thanks for support
+### Android
 
-[MockAPI](https://mockapi.io?utm_source=ionic-tk-social-network) - MockAPI is a simple tool that lets you easily mock up APIs, generate custom data, and preform operations on it using RESTful interface.
+1. Run `ionic cordova run android --prod`
 
-## License
+### iOS
 
-License MIT (see the [LICENSE](https://github.com/thenaim/ionic-tk-social-network/blob/master/LICENSE) file for the full text)
+1. Run `ionic cordova run ios --prod`

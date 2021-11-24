@@ -1,46 +1,42 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { appConfig } from './app.config';
-import { AuthGuardAfterLoginService } from './core/auth-guard/auth-guard.service';
+import { RouterModule, Routes } from '@angular/router';
+import { CheckTutorial } from './providers/check-tutorial.service';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: appConfig.routes.tabs.root,
-    pathMatch: 'full',
+    redirectTo: '/tutorial',
+    pathMatch: 'full'
   },
   {
-    path: appConfig.routes.tabs.root,
-    loadChildren: () => import('./tabs/tabs.module').then((m) => m.TabsPageModule),
-    canActivate: [AuthGuardAfterLoginService],
-  },
-
-  /* Auth routes */
-  {
-    path: 'auth',
-    loadChildren: () => import('./pages/auth/auth.module').then((m) => m.AuthPageModule),
-  },
-
-  /* Other routes */
-
-  {
-    path: 'message-detail/:messageId',
-    loadChildren: () => import('./pages/message-detail/message-detail.module').then((m) => m.MessageDetailPageModule),
-    canActivate: [AuthGuardAfterLoginService],
-  },
-
-  /* Redirect routes */
-  {
-    path: 'error',
-    redirectTo: appConfig.routes.redirectOnError,
+    path: 'account',
+    loadChildren: () => import('./pages/account/account.module').then(m => m.AccountModule)
   },
   {
-    path: '**',
-    redirectTo: appConfig.routes.redirectOnNotFound,
+    path: 'support',
+    loadChildren: () => import('./pages/support/support.module').then(m => m.SupportModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignUpModule)
+  },
+  {
+    path: 'app',
+    loadChildren: () => import('./pages/tabs-page/tabs-page.module').then(m => m.TabsModule)
+  },
+  {
+    path: 'tutorial',
+    loadChildren: () => import('./pages/tutorial/tutorial.module').then(m => m.TutorialModule),
+    canLoad: [CheckTutorial]
+  }
 ];
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
-  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
