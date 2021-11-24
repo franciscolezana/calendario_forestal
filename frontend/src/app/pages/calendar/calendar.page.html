@@ -1,9 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>calendar</ion-title>
+    <ion-title>Calendario Forestal</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-calendario works!
+  <div>
+    <calendar
+    [eventSource]="eventSource"
+    [calendarMode]="calendar.mode"
+    [currentDate]="calendar.currentDate"
+    >
+    </calendar>
+  </div>
+  
 </ion-content>

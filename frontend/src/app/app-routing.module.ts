@@ -39,6 +39,10 @@ const routes: Routes = [
   {
     path: 'lunar',
     loadChildren: () => import('./pages/lunar/lunar.module').then( m => m.LunarPageModule)
+  },
+  {
+    path: 'cal-modal',
+    loadChildren: () => import('./pages/cal-modal/cal-modal.module').then( m => m.CalModalPageModule)
   }
 
 ];
