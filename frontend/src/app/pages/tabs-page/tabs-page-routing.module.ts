@@ -23,28 +23,21 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'speakers',
+        path: 'calendar',
         children: [
           {
             path: '',
-            loadChildren: () => import('../speaker-list/speaker-list.module').then(m => m.SpeakerListModule)
-          },
-          {
-            path: 'session/:sessionId',
-            loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
-          },
-          {
-            path: 'speaker-details/:speakerId',
-            loadChildren: () => import('../speaker-detail/speaker-detail.module').then(m => m.SpeakerDetailModule)
+            loadChildren: () => import('../calendar/calendar.module').then(m => m.CalendarPageModule)
           }
         ]
       },
+      
       {
-        path: 'map',
+        path: 'lunar',
         children: [
           {
             path: '',
-            loadChildren: () => import('../map/map.module').then(m => m.MapModule)
+            loadChildren: () => import('../lunar/lunar.module').then(m => m.LunarPageModule)
           }
         ]
       },

@@ -32,7 +32,15 @@ const routes: Routes = [
     path: 'tutorial',
     loadChildren: () => import('./pages/tutorial/tutorial.module').then(m => m.TutorialModule),
     canLoad: [CheckTutorial]
+  },  {
+    path: 'calendar',
+    loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
+  },
+  {
+    path: 'lunar',
+    loadChildren: () => import('./pages/lunar/lunar.module').then( m => m.LunarPageModule)
   }
+
 ];
 
 @NgModule({
